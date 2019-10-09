@@ -32,6 +32,7 @@ def current_cards(cards):
     print(cards[len(cards) - 1])
 
 while True:
+    deck = []
     for i in range(1, 14):
         for j in range(4):
             deck.append(i)
@@ -155,6 +156,7 @@ while True:
 
             print("Dealer's new card is", read_dc[i])
             print("Dealer's current cards:", end=' ')
+            # print(count_dc)
             for j in range(len(read_dc) - 1):
                 print(read_dc[j], ", ", end=' ', sep='')
             print(read_dc[len(read_dc) - 1])
@@ -173,16 +175,17 @@ while True:
             if sum(count_dc) == 21:
                 print('Dealer gets blackjack.')
 
-            if sum(count_dc) == sum(count_pc):
-                print('Tie.')
-                user_input = input('Play Another One? (y/n) ')
-
             if sum(count_dc) > sum(count_pc):
                 print('Dealer has higher number. You Lose.')
                 user_input = input('Play Another One? (y/n) ')
                 break
 
             i += 1
+
+        if sum(count_dc) == sum(count_pc):
+            print('Tie.')
+            user_input = input('Play Another One? (y/n) ')
+
 
     if user_input == 'n':
         break
