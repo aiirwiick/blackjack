@@ -1,5 +1,4 @@
 # Blackjack
-## Design Document
 
 Instructions:
 1. Install Python3
